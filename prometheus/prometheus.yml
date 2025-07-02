@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 1s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # I want to query the node exporter metrics, which are available at http://localhost:9100/metrics.
+  # I want to scrape node_cpu_guest_seconds_total
+
+  # Every job can reference https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config
+  - job_name: 'node_exporter'
+    metrics_path: /metrics
+    scheme: http
+    scrape_interval: 1s
+    # Use the service name when all services are in the same docker-compose
+    static_configs:
+      - targets: ['node_exporter:9100']
