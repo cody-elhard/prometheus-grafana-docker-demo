@@ -31,3 +31,4 @@ done
 - Public Grafana Dashboards can all be found at, https://grafana.com/grafana/dashboards/
 - Use existing dashboard for node-exporter, https://grafana.com/grafana/dashboards/1860-node-exporter-full/
 - in Grafana Dashboards UI, you may want a short scrape interval such as 1s
+- I set this up on MacOS, so unsure on other systems
